@@ -1,8 +1,25 @@
 FROM williamyeh/ansible:debian8
 
+ENV DEBOPS_HOME /home/debops
+
 RUN apt-get update && \
     apt-get install --no-install-recommends -y \
       python-netaddr \
 	  python-pip \
-    && pip install --upgrade debops \
+	  python-ldap \
+	  python-passlib \
+	  uuid-runtime \
+	  encfs \
+	  git \
+    && pip install debops \
     && rm -rf /var/lib/apt/lists/* 
+
+ADD debops.cfg /etc
+RUN debops-update
+
+ADD entrypoint.sh .
+
+ENTRYPOINT ["/entrypoint.sh"]
+	
+VOLUME $DEBOPS_HOME
+WORKDIR $DEBOPS_HOME
