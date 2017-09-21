@@ -1,4 +1,4 @@
-FROM williamyeh/ansible:debian8
+FROM jsurf/ansible:latest
 
 ENV DEBOPS_HOME /home/debops
 
