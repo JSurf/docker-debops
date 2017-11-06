@@ -10,6 +10,7 @@ RUN apt-get update && \
 	  python-passlib \
 	  python-setuptools \
 	  python-crypto \
+	  python-wheel \
 	  uuid-runtime \
 	  encfs \
 	  git \
