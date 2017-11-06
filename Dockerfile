@@ -9,6 +9,7 @@ RUN apt-get update && \
 	  python-ldap \
 	  python-passlib \
 	  python-setuptools \
+	  python-crypto \
 	  uuid-runtime \
 	  encfs \
 	  git \
